@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import truncate from 'lodash.truncate';
 
 export const ArticlePreview = ({ article }) => <article className="card mb-3">
     <div className="row no-gutters">
         <div className="col-md-4">
-            <img src={article.image} className="card-img" alt={`${article.title} image`} />
+            <img src={article.image || 'https://placehold.co/280x180?text=Image+not+found...'} className="card-img" alt={`${article.title} image`} />
         </div>
         <div className="col-md-8">
             <div className="card-body">
@@ -16,7 +17,7 @@ export const ArticlePreview = ({ article }) => <article className="card mb-3">
                         <small className="text-muted float-right">{article.date}</small>
                     </div>
                 </div>
-                <p className="card-text">{article.preamble}</p>
+                <p className="card-text">{truncate(article.preamble, { length: 120 })}</p>
             </div>
         </div>
     </div>
