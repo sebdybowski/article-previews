@@ -1,5 +1,20 @@
 # Schibsted frontend task app
 
+## Notes from assignee
+Changes I performed:
+* Merged PR's https://github.com/sebdybowski/article-previews/pulls?q=is%3Apr+is%3Aclosed
+* Closed Issues https://github.com/sebdybowski/article-previews/issues?q=is%3Aissue+is%3Aclosed
+
+Changes that may be desired for future of app:
+* Outstanding issues https://github.com/sebdybowski/article-previews/issues
+
+Report from performance
+* https://tools.pingdom.com/#5ad35a8732000000
+
+Demo:
+* http://article-previews.sebdybowski.com/
+
+## Intro
 This is a very basic npm project with default webpack setup.
 
 You should use this project as a base for your solution.
