@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './style/custom.css';
 
 import { ArticleFeed } from './pages/ArticleFeed';
 
 const createRoot = () => {
     let element = document.createElement('div');
-    element.id = "root";
+    element.id = 'root';
     return element;
 };
 

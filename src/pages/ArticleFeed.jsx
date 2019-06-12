@@ -1,45 +1,54 @@
 import React, { Component } from 'react';
-import map from 'lodash.map';
-import get from 'lodash.get';
-import filter from 'lodash.filter';
-import reject from 'lodash.reject';
-import includes from 'lodash.includes';
-import isEmpty from 'lodash.isempty';
+import _ from 'lodash';
 import { fetchAllArticles } from '../utils/services';
 import { ArticlePreview } from '../components/ArticlePreview';
-import { CategoryPanel } from "../components/CategoryPanel";
-import { INITIAL_STATE } from "../utils/constants";
+import { CategoryPanel } from '../components/CategoryPanel';
+import { FetchError } from '../components/FetchError';
+import { resolveSortableDate, resolveArticlesList } from '../utils/articles';
+import { INITIAL_STATE, SORT_ORDER } from "../utils/constants";
+import { DateFilter } from "../components/inputs/DateFilter";
 
-const Articles = ({ articles }) => map(articles, article =>
+const Articles = ({ articles }) => _.map(articles, article =>
     <ArticlePreview article={article} key={article.id}/>);
 
 export class ArticleFeed extends Component {
     state = INITIAL_STATE;
     componentDidMount() {
-        fetchAllArticles().then(value => this.setState({ articles: value || []}));
+        fetchAllArticles().then(value => this.setState({
+            articles: (value && _.map(value, article =>
+                ({ ...article, dateSortable: resolveSortableDate(article) }))) || [],
+        }));
     }
     updateSelectedCategories = (value) => {
         const { selectedCategories } = this.state;
-        if (includes(selectedCategories, value)) {
-            this.setState({ selectedCategories: reject(selectedCategories, category => category === value) });
+        if (_.includes(selectedCategories, value)) {
+            this.setState({ selectedCategories: _.reject(selectedCategories, category => category === value) });
         } else {
             this.setState({ selectedCategories: [...selectedCategories, value]})
         }
     };
+    updateSortOrder = () => (this.state.sortOrder === SORT_ORDER.DESCENDING ?
+        this.setState({ sortOrder: SORT_ORDER.ASCENDING }) :
+        this.setState({ sortOrder: SORT_ORDER.DESCENDING })
+    );
     render () {
-        const { selectedCategories, articles } = this.state;
+        const { selectedCategories, articles, sortOrder } = this.state;
+        const error = _.find(articles, article => !_.get(article, 'id'));
         return <div className="container">
             <nav className="row">
-                <div className="col">filter</div>
+                <div className="col">
+                    <DateFilter onValueChange={this.updateSortOrder} sortOrder={this.state.sortOrder} />
+                </div>
             </nav>
             <main className="row">
-                <nav className="col-3" >
+                <nav className="col-xs-12 col-sm-12 col-md-4 col-lg-3" >
                     <CategoryPanel onValueChange={this.updateSelectedCategories} selectedValues={selectedCategories}/>
                 </nav>
-                <section className="col-9">
-                    { isEmpty(selectedCategories) ?
+                <section className="col-xs-12 col-sm-12 col-md-8 col-lg-9">
+                    { error && <FetchError errorData={error} /> }
+                    { _.isEmpty(selectedCategories) ?
                         <h1>Sorry, no posts found</h1> :
-                        <Articles articles={filter(articles, article => includes(selectedCategories, get(article, 'category')))} />
+                        <Articles articles={resolveArticlesList(articles, selectedCategories, sortOrder)} />
                     }
                 </section>
             </main>

@@ -1,0 +1,40 @@
+.sort-order {
+    display: inline;
+}
+
+span.sort-order::after,
+span.sort-order::before {
+    border: 4px solid transparent;
+    content: "";
+    display: block;
+    height: 0;
+    right: 15px;
+    top: 50%;
+    position: absolute;
+    width: 0;
+}
+
+.sort-order::before {
+    margin-top: -9px;
+}
+
+.sort-order::after {
+    margin-top: 1px;
+}
+
+
+.sort-order.desc::before {
+    border-bottom-color: #ccc;
+}
+
+.sort-order.desc::after {
+    border-top-color: #888;
+}
+
+.sort-order.asc::before {
+    border-bottom-color: #888;
+}
+
+.sort-order.asc::after {
+    border-top-color: #ccc;
+}
