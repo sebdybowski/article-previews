@@ -6,7 +6,7 @@ import { ArticleFeed } from './pages/ArticleFeed';
 
 const createRoot = () => {
     let element = document.createElement('div');
-    element.id = "root";
+    element.id = 'root';
     return element;
 };
 
