@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ArticleFeed should render correctly 1`] = `
+<div
+  className="container"
+>
+  <nav
+    className="row"
+  >
+    <div
+      className="col"
+    >
+      <DateFilter
+        onValueChange={[Function]}
+        sortOrder="desc"
+      />
+    </div>
+  </nav>
+  <main
+    className="row"
+  >
+    <nav
+      className="col-xs-12 col-sm-12 col-md-4 col-lg-3"
+    >
+      <CategoryPanel
+        onValueChange={[Function]}
+        selectedValues={
+          Array [
+            "sport",
+            "fashion",
+          ]
+        }
+      />
+    </nav>
+    <section
+      className="col-xs-12 col-sm-12 col-md-8 col-lg-9"
+    >
+      <Articles
+        articles={Array []}
+      />
+    </section>
+  </main>
+</div>
+`;

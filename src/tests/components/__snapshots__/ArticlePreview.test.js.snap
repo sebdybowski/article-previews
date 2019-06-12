@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ArticlePreview should render correctly 1`] = `
+<article
+  className="card mb-3"
+>
+  <div
+    className="row no-gutters"
+  >
+    <div
+      className="col-xs-12 col-md-5 col-lg-4"
+    >
+      <img
+        alt="Her får lillebror gode råd av Petter Northug image"
+        className="card-img"
+        src="https://placeimg.com/280/180/any"
+      />
+    </div>
+    <div
+      className="col-xs-12 col-md-7 col-lg-8"
+    >
+      <div
+        className="card-body"
+      >
+        <div
+          className="row"
+        >
+          <div
+            className="col-8"
+          >
+            <h5
+              className="card-title"
+            >
+              Her får lillebror gode råd av Petter Northug
+            </h5>
+          </div>
+          <div
+            className="col-4"
+          >
+            <small
+              className="text-muted float-right"
+            >
+              15. januar 2019
+            </small>
+          </div>
+        </div>
+        <p
+          className="card-text d-none d-md-block"
+        >
+          Før NM-sprinten i fristil i Grova i Meråker, fikk Even Northug gode råd av storebror Petter.
+        </p>
+      </div>
+    </div>
+  </div>
+</article>
+`;

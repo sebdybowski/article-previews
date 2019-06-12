@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FetchError should render correctly with 404 error 1`] = `
+<div
+  className="alert alert-danger"
+  role="alert"
+>
+  <p>
+    We are sorry, but requests from category 
+    <span
+      className="font-weight-bold"
+    />
+     were not loaded due to 
+    <span
+      className="font-weight-bold"
+    >
+      404
+    </span>
+     error. This bug is temporary, please: 
+  </p>
+  <button
+    className="btn btn-primary btn-block"
+    onClick={[Function]}
+    type="button"
+  >
+    Reload the page
+  </button>
+</div>
+`;
+
+exports[`FetchError should render correctly with 500 error 1`] = `
+<div
+  className="alert alert-danger"
+  role="alert"
+>
+  <p>
+    We are sorry, but requests from category 
+    <span
+      className="font-weight-bold"
+    />
+     were not loaded due to 
+    <span
+      className="font-weight-bold"
+    >
+      500
+    </span>
+     error. This bug is temporary, please: 
+  </p>
+  <button
+    className="btn btn-primary btn-block"
+    onClick={[Function]}
+    type="button"
+  >
+    Reload the page
+  </button>
+</div>
+`;

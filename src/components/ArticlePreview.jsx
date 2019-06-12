@@ -35,5 +35,5 @@ ArticlePreview.propTypes = {
 };
 
 ArticlePreview.defaultProps = {
-    article: [],
+    article: {},
 };

@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import {MONTH_MAP, SORT_ORDER} from "./constants";
+import { MONTH_MAP } from "./constants";
 
 export const resolveSortableDate = article => _.chain(article)
     .get('date')

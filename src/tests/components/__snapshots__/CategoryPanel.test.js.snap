@@ -1,0 +1,129 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CategoryPanel should render correctly first value selected 1`] = `
+<ul
+  className="nav flex-column"
+>
+  <h5
+    className="mb-3"
+  >
+    Data sources
+  </h5>
+  <li
+    className="nav-item mb-2"
+    key="sport"
+  >
+    <Checkbox
+      label="sport"
+      onValueChange={[Function]}
+      value={true}
+    />
+  </li>
+  <li
+    className="nav-item mb-2"
+    key="fashion"
+  >
+    <Checkbox
+      label="fashion"
+      onValueChange={[Function]}
+      value={false}
+    />
+  </li>
+</ul>
+`;
+
+exports[`CategoryPanel should render correctly no value selected 1`] = `
+<ul
+  className="nav flex-column"
+>
+  <h5
+    className="mb-3"
+  >
+    Data sources
+  </h5>
+  <li
+    className="nav-item mb-2"
+    key="sport"
+  >
+    <Checkbox
+      label="sport"
+      onValueChange={[Function]}
+      value={false}
+    />
+  </li>
+  <li
+    className="nav-item mb-2"
+    key="fashion"
+  >
+    <Checkbox
+      label="fashion"
+      onValueChange={[Function]}
+      value={false}
+    />
+  </li>
+</ul>
+`;
+
+exports[`CategoryPanel should render correctly second value selected 1`] = `
+<ul
+  className="nav flex-column"
+>
+  <h5
+    className="mb-3"
+  >
+    Data sources
+  </h5>
+  <li
+    className="nav-item mb-2"
+    key="sport"
+  >
+    <Checkbox
+      label="sport"
+      onValueChange={[Function]}
+      value={false}
+    />
+  </li>
+  <li
+    className="nav-item mb-2"
+    key="fashion"
+  >
+    <Checkbox
+      label="fashion"
+      onValueChange={[Function]}
+      value={true}
+    />
+  </li>
+</ul>
+`;
+
+exports[`CategoryPanel should render correctly with default props 1`] = `
+<ul
+  className="nav flex-column"
+>
+  <h5
+    className="mb-3"
+  >
+    Data sources
+  </h5>
+  <li
+    className="nav-item mb-2"
+    key="sport"
+  >
+    <Checkbox
+      label="sport"
+      onValueChange={[Function]}
+      value={true}
+    />
+  </li>
+  <li
+    className="nav-item mb-2"
+    key="fashion"
+  >
+    <Checkbox
+      label="fashion"
+      onValueChange={[Function]}
+      value={true}
+    />
+  </li>
+</ul>
+`;

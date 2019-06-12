@@ -4,7 +4,9 @@
   "description": "frontend assignment task js",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "test:update-snapshot": "jest --update-snapshot",
     "dev": "webpack-dev-server",
     "build": "webpack",
     "run-backend": "node server.js"
@@ -14,17 +16,29 @@
   "devDependencies": {
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.5",
-    "@babel/preset-env": "^7.4.5",
-    "@babel/preset-react": "^7.0.0",
-    "babel-loader": "^8.0.6",
-    "html-webpack-plugin": "^3.2.0",
-    "webpack": "^4.28.1",
-    "webpack-cli": "^3.1.2",
-    "webpack-dev-server": "^3.1.10",
     "@babel/plugin-proposal-class-properties": "^7.4.4",
     "@babel/polyfill": "^7.4.4",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
+    "babel-jest": "^24.8.0",
+    "babel-loader": "^8.0.6",
     "css-loader": "^2.1.1",
-    "style-loader": "^0.23.1"
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "enzyme-to-json": "^3.3.5",
+    "html-webpack-plugin": "^3.2.0",
+    "jest": "^24.8.0",
+    "jest-environment-enzyme": "^7.0.2",
+    "jest-enzyme": "^7.0.2",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.28.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10"
+  },
+  "jest": {
+    "setupFiles": ["./src/tests/setupTests.js"],
+    "snapshotSerializers": ["enzyme-to-json/serializer"],
+    "testEnvironment": "enzyme"
   },
   "babel": {
     "plugins": [
