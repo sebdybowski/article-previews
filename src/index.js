@@ -4,4 +4,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { ArticleFeed } from './pages/ArticleFeed';
 
-ReactDOM.render(<ArticleFeed />, document.body);
+const createRoot = () => {
+    let element = document.createElement('div');
+    element.id = "root";
+    return element;
+};
+
+document.body.appendChild(createRoot());
+ReactDOM.render(<ArticleFeed />, document.getElementById('root'));
