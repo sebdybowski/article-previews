@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add lodash.chain
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js install
 
 PATH: 
   C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\Sebastian\bin;D:\dev\article-previews\node_modules\.bin;C:\Python27;C:\Python27\Scripts;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\nodejs;C:\ProgramData\chocolatey\bin;C:\Program Files (x86)\Yarn\bin;C:\Program Files\Git\cmd;C:\Users\Sebastian\AppData\Local\Microsoft\WindowsApps;C:\Users\Sebastian\AppData\Roaming\npm;C:\Users\Sebastian\AppData\Local\Yarn\bin
@@ -14,17 +14,12 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/lodash.chain: Not found
-      at Request.params.callback [as _callback] (C:\Program Files (x86)\Yarn\lib\cli.js:65200:18)
-      at Request.self.callback (C:\Program Files (x86)\Yarn\lib\cli.js:129590:22)
-      at Request.emit (events.js:200:13)
-      at Request.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:130562:10)
-      at Request.emit (events.js:200:13)
-      at IncomingMessage.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:130484:12)
-      at Object.onceWrapper (events.js:288:20)
-      at IncomingMessage.emit (events.js:205:15)
-      at endReadableNT (_stream_readable.js:1137:12)
-      at processTicksAndRejections (internal/process/task_queues.js:84:9)
+  SyntaxError: D:\dev\article-previews\package.json: Unexpected token } in JSON at position 1437
+      at JSON.parse (<anonymous>)
+      at C:\Program Files (x86)\Yarn\lib\cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (C:\Program Files (x86)\Yarn\lib\cli.js:304:30)
+      at C:\Program Files (x86)\Yarn\lib\cli.js:315:13
 
 npm manifest: 
   {
@@ -49,7 +44,11 @@ npm manifest:
       "html-webpack-plugin": "^3.2.0",
       "webpack": "^4.28.1",
       "webpack-cli": "^3.1.2",
-      "webpack-dev-server": "^3.1.10"
+      "webpack-dev-server": "^3.1.10",
+      "@babel/plugin-proposal-class-properties": "^7.4.4",
+      "@babel/polyfill": "^7.4.4",
+      "css-loader": "^2.1.1",
+      "style-loader": "^0.23.1"
     },
     "babel": {
       "plugins": [
@@ -77,30 +76,12 @@ npm manifest:
       ]
     },
     "dependencies": {
-      "@babel/plugin-proposal-class-properties": "^7.4.4",
-      "@babel/polyfill": "^7.4.4",
       "axios": "^0.19.0",
       "bootstrap": "^4.3.1",
-      "css-loader": "^2.1.1",
-      "lodash.filter": "^4.6.0",
-      "lodash.flatten": "^4.4.0",
-      "lodash.get": "^4.4.2",
-      "lodash.includes": "^4.3.0",
-      "lodash.isarray": "^4.0.0",
-      "lodash.isempty": "^4.4.0",
-      "lodash.map": "^4.6.0",
-      "lodash.orderby": "^4.6.0",
-      "lodash.reject": "^4.6.0",
-      "lodash.replace": "^4.1.4",
-      "lodash.split": "^4.4.2",
-      "lodash.tonumber": "^4.0.3",
-      "lodash.trim": "^4.5.1",
-      "lodash.truncate": "^4.4.2",
-      "lodash.values": "^4.3.0",
+      "lodash": "^4.17.11",
       "prop-types": "^15.7.2",
       "react": "^16.8.6",
       "react-dom": "^16.8.6",
-      "style-loader": "^0.23.1"
     }
   }
 
@@ -830,6 +811,11 @@ Lockfile:
       esutils "^2.0.2"
       lodash "^4.17.11"
       to-fast-properties "^2.0.0"
+  
+  "@fortawesome/fontawesome-free@^5.9.0":
+    version "5.9.0"
+    resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-free/-/fontawesome-free-5.9.0.tgz#1aa5c59efb1b8c6eb6277d1e3e8c8f31998b8c8e"
+    integrity sha512-g795BBEzM/Hq2SYNPm/NQTIp3IWd4eXSH0ds87Na2jnrAUFX3wkyZAI4Gwj9DOaWMuz2/01i8oWI7P7T/XLkhg==
   
   "@types/events@*":
     version "3.0.0"
@@ -2404,6 +2390,11 @@ Lockfile:
     dependencies:
       debug "^3.2.6"
   
+  font-awesome@^4.7.0:
+    version "4.7.0"
+    resolved "https://registry.yarnpkg.com/font-awesome/-/font-awesome-4.7.0.tgz#8fa8cf0411a1a31afd07b06d2902bb9fc815a133"
+    integrity sha1-j6jPBBGhoxr9B7BtKQK7n8gVoTM=
+  
   for-in@^1.0.2:
     version "1.0.2"
     resolved "https://registry.yarnpkg.com/for-in/-/for-in-1.0.2.tgz#81068d295a8142ec0ac726c6e2200c30fb6d5e80"
@@ -3217,81 +3208,6 @@ Lockfile:
     dependencies:
       p-locate "^3.0.0"
       path-exists "^3.0.0"
-  
-  lodash.filter@^4.6.0:
-    version "4.6.0"
-    resolved "https://registry.yarnpkg.com/lodash.filter/-/lodash.filter-4.6.0.tgz#668b1d4981603ae1cc5a6fa760143e480b4c4ace"
-    integrity sha1-ZosdSYFgOuHMWm+nYBQ+SAtMSs4=
-  
-  lodash.flatten@^4.4.0:
-    version "4.4.0"
-    resolved "https://registry.yarnpkg.com/lodash.flatten/-/lodash.flatten-4.4.0.tgz#f31c22225a9632d2bbf8e4addbef240aa765a61f"
-    integrity sha1-8xwiIlqWMtK7+OSt2+8kCqdlph8=
-  
-  lodash.get@^4.4.2:
-    version "4.4.2"
-    resolved "https://registry.yarnpkg.com/lodash.get/-/lodash.get-4.4.2.tgz#2d177f652fa31e939b4438d5341499dfa3825e99"
-    integrity sha1-LRd/ZS+jHpObRDjVNBSZ36OCXpk=
-  
-  lodash.includes@^4.3.0:
-    version "4.3.0"
-    resolved "https://registry.yarnpkg.com/lodash.includes/-/lodash.includes-4.3.0.tgz#60bb98a87cb923c68ca1e51325483314849f553f"
-    integrity sha1-YLuYqHy5I8aMoeUTJUgzFISfVT8=
-  
-  lodash.isarray@^4.0.0:
-    version "4.0.0"
-    resolved "https://registry.yarnpkg.com/lodash.isarray/-/lodash.isarray-4.0.0.tgz#2aca496b28c4ca6d726715313590c02e6ea34403"
-    integrity sha1-KspJayjEym1yZxUxNZDALm6jRAM=
-  
-  lodash.isempty@^4.4.0:
-    version "4.4.0"
-    resolved "https://registry.yarnpkg.com/lodash.isempty/-/lodash.isempty-4.4.0.tgz#6f86cbedd8be4ec987be9aaf33c9684db1b31e7e"
-    integrity sha1-b4bL7di+TsmHvpqvM8loTbGzHn4=
-  
-  lodash.map@^4.6.0:
-    version "4.6.0"
-    resolved "https://registry.yarnpkg.com/lodash.map/-/lodash.map-4.6.0.tgz#771ec7839e3473d9c4cde28b19394c3562f4f6d3"
-    integrity sha1-dx7Hg540c9nEzeKLGTlMNWL09tM=
-  
-  lodash.orderby@^4.6.0:
-    version "4.6.0"
-    resolved "https://registry.yarnpkg.com/lodash.orderby/-/lodash.orderby-4.6.0.tgz#e697f04ce5d78522f54d9338b32b81a3393e4eb3"
-    integrity sha1-5pfwTOXXhSL1TZM4syuBozk+TrM=
-  
-  lodash.reject@^4.6.0:
-    version "4.6.0"
-    resolved "https://registry.yarnpkg.com/lodash.reject/-/lodash.reject-4.6.0.tgz#80d6492dc1470864bbf583533b651f42a9f52415"
-    integrity sha1-gNZJLcFHCGS79YNTO2UfQqn1JBU=
-  
-  lodash.replace@^4.1.4:
-    version "4.1.4"
-    resolved "https://registry.yarnpkg.com/lodash.replace/-/lodash.replace-4.1.4.tgz#531c0960dfb5256172afc1c34a4f0ba6f0cb20b8"
-    integrity sha1-UxwJYN+1JWFyr8HDSk8LpvDLILg=
-  
-  lodash.split@^4.4.2:
-    version "4.4.2"
-    resolved "https://registry.yarnpkg.com/lodash.split/-/lodash.split-4.4.2.tgz#a7f7bd9f37968b9312428e2f3ac3fb3173c4c3c6"
-    integrity sha1-p/e9nzeWi5MSQo4vOsP7MXPEw8Y=
-  
-  lodash.tonumber@^4.0.3:
-    version "4.0.3"
-    resolved "https://registry.yarnpkg.com/lodash.tonumber/-/lodash.tonumber-4.0.3.tgz#0b96b31b35672793eb7f5a63ee791f1b9e9025d9"
-    integrity sha1-C5azGzVnJ5Prf1pj7nkfG56QJdk=
-  
-  lodash.trim@^4.5.1:
-    version "4.5.1"
-    resolved "https://registry.yarnpkg.com/lodash.trim/-/lodash.trim-4.5.1.tgz#36425e7ee90be4aa5e27bcebb85b7d11ea47aa57"
-    integrity sha1-NkJefukL5KpeJ7zruFt9EepHqlc=
-  
-  lodash.truncate@^4.4.2:
-    version "4.4.2"
-    resolved "https://registry.yarnpkg.com/lodash.truncate/-/lodash.truncate-4.4.2.tgz#5a350da0b1113b837ecfffd5812cbe58d6eae193"
-    integrity sha1-WjUNoLERO4N+z//VgSy+WNbq4ZM=
-  
-  lodash.values@^4.3.0:
-    version "4.3.0"
-    resolved "https://registry.yarnpkg.com/lodash.values/-/lodash.values-4.3.0.tgz#a3a6c2b0ebecc5c2cba1c17e6e620fe81b53d347"
-    integrity sha1-o6bCsOvsxcLLocF+bmIP6BtT00c=
   
   lodash@^4.17.11, lodash@^4.17.3:
     version "4.17.11"
