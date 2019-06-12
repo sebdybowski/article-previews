@@ -4,3 +4,8 @@ export const ENDPOINT_TYPE = {
 };
 
 export const CATEGORY_TYPE = ['sport', 'fashion'];
+
+export const INITIAL_STATE = {
+    articles: [],
+    selectedCategories: CATEGORY_TYPE,
+};

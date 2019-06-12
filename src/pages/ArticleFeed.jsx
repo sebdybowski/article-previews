@@ -4,16 +4,11 @@ import get from 'lodash.get';
 import filter from 'lodash.filter';
 import reject from 'lodash.reject';
 import includes from 'lodash.includes';
-import values from 'lodash.values';
+import isEmpty from 'lodash.isempty';
 import { fetchAllArticles } from '../utils/services';
 import { ArticlePreview } from '../components/ArticlePreview';
 import { CategoryPanel } from "../components/CategoryPanel";
-import { CATEGORY_TYPE } from "../utils/constants";
-
-const INITIAL_STATE = {
-    articles: [],
-    selectedCategories: values(CATEGORY_TYPE),
-};
+import { INITIAL_STATE } from "../utils/constants";
 
 const Articles = ({ articles }) => map(articles, article =>
     <ArticlePreview article={article} key={article.id}/>);
@@ -33,7 +28,6 @@ export class ArticleFeed extends Component {
     };
     render () {
         const { selectedCategories, articles } = this.state;
-        console.log(selectedCategories, articles);
         return <div className="container">
             <nav className="row">
                 <div className="col">filter</div>
@@ -43,7 +37,10 @@ export class ArticleFeed extends Component {
                     <CategoryPanel onValueChange={this.updateSelectedCategories} selectedValues={selectedCategories}/>
                 </nav>
                 <section className="col-9">
-                    <Articles articles={filter(articles, article => includes(selectedCategories, get(article, 'category')))} />
+                    { isEmpty(selectedCategories) ?
+                        <h1>Sorry, no posts found</h1> :
+                        <Articles articles={filter(articles, article => includes(selectedCategories, get(article, 'category')))} />
+                    }
                 </section>
             </main>
         </div>;
