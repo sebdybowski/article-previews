@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
 import { fetchAllArticles } from '../utils/services';
-import { ArticlePreview } from '../components/ArticlePreview';
 import { CategoryPanel } from '../components/CategoryPanel';
 import { FetchError } from '../components/FetchError';
 import { resolveSortableDate, resolveArticlesList } from '../utils/articles';
-import { INITIAL_STATE, SORT_ORDER } from "../utils/constants";
-import { DateFilter } from "../components/inputs/DateFilter";
-
-const Articles = ({ articles }) => _.map(articles, article =>
-    <ArticlePreview article={article} key={article.id}/>);
+import { INITIAL_STATE, SORT_ORDER } from '../utils/constants';
+import { DateFilter } from '../components/inputs/DateFilter';
+import { Articles } from '../components/Articles';
 
 export class ArticleFeed extends Component {
     state = INITIAL_STATE;
@@ -34,17 +31,17 @@ export class ArticleFeed extends Component {
     render () {
         const { selectedCategories, articles, sortOrder } = this.state;
         const error = _.find(articles, article => !_.get(article, 'id'));
-        return <div className="container">
-            <nav className="row">
-                <div className="col">
+        return <div className='container'>
+            <nav className='row'>
+                <div className='col'>
                     <DateFilter onValueChange={this.updateSortOrder} sortOrder={this.state.sortOrder} />
                 </div>
             </nav>
-            <main className="row">
-                <nav className="col-xs-12 col-sm-12 col-md-4 col-lg-3" >
+            <main className='row'>
+                <nav className='col-xs-12 col-sm-12 col-md-4 col-lg-3' >
                     <CategoryPanel onValueChange={this.updateSelectedCategories} selectedValues={selectedCategories}/>
                 </nav>
-                <section className="col-xs-12 col-sm-12 col-md-8 col-lg-9">
+                <section className='col-xs-12 col-sm-12 col-md-8 col-lg-9'>
                     { error && <FetchError errorData={error} /> }
                     { _.isEmpty(selectedCategories) ?
                         <h1>Sorry, no posts found</h1> :

@@ -15,5 +15,12 @@ export const FetchError = ({ errorData }) =>
     </div>;
 
 FetchError.propTypes = {
-    errorData: PropTypes.object,
+    errorData: PropTypes.shape({
+        response: PropTypes.shape({
+            status: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+        }),
+        config: PropTypes.shape({
+            url: PropTypes.string,
+        }),
+    }),
 };

@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DateFilter should render correctly with sortOrder asc 1`] = `
+<button
+  className="btn btn-link float-right"
+  onClick={[Function]}
+  type="button"
+>
+  <span
+    className="sort-order asc"
+  >
+    Sort by date
+  </span>
+</button>
+`;
+
+exports[`DateFilter should render correctly with sortOrder esc 1`] = `
+<button
+  className="btn btn-link float-right"
+  onClick={[Function]}
+  type="button"
+>
+  <span
+    className="sort-order desc"
+  >
+    Sort by date
+  </span>
+</button>
+`;

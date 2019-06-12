@@ -8,5 +8,5 @@ export const DateFilter = ({ onValueChange, sortOrder }) =>
 
 DateFilter.propTypes = {
     onValueChange: PropTypes.func.isRequired,
-    sortOrder: PropTypes.string,
+    sortOrder: PropTypes.string.isRequired,
 };

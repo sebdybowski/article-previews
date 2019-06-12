@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Checkbox should render correctly 1`] = `
+<div
+  className="form-check"
+>
+  <input
+    className="form-check-input"
+    id=""
+    onChange={[Function]}
+    type="checkbox"
+  />
+  <label
+    className="form-check-label"
+    htmlFor=""
+  >
+    <span
+      className="btn-link"
+    />
+  </label>
+</div>
+`;
+
+exports[`Checkbox should render correctly with false value 1`] = `
+<div
+  className="form-check"
+>
+  <input
+    checked={false}
+    className="form-check-input"
+    id=""
+    onChange={[Function]}
+    type="checkbox"
+  />
+  <label
+    className="form-check-label"
+    htmlFor=""
+  >
+    <span
+      className="btn-link"
+    />
+  </label>
+</div>
+`;
+
+exports[`Checkbox should render correctly with true value 1`] = `
+<div
+  className="form-check"
+>
+  <input
+    checked={true}
+    className="form-check-input"
+    id=""
+    onChange={[Function]}
+    type="checkbox"
+  />
+  <label
+    className="form-check-label"
+    htmlFor=""
+  >
+    <span
+      className="btn-link"
+    />
+  </label>
+</div>
+`;

@@ -8,11 +8,12 @@ Changes I performed:
 Changes that may be desired for future of app:
 * Outstanding issues https://github.com/sebdybowski/article-previews/issues
 
-Report from performance
+Report from performance:
 * https://tools.pingdom.com/#5ad35a8732000000
 
-Demo:
-* http://article-previews.sebdybowski.com/
+To run:
+`webpack-dev-server`
+`node server.js`
 
 ## Intro
 This is a very basic npm project with default webpack setup.

@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Articles should render correctly with default props 1`] = `
+Array [
+  <ArticlePreview
+    article={
+      Object {
+        "category": "fashion",
+        "date": "7. februar 2019",
+        "dateSortable": 20190207,
+        "id": 986521,
+        "image": "https://placeimg.com/280/200/any",
+        "preamble": "Det finnes mange skrevne og uskrevne regler som beskriver hva en smoking egentlig er. Vi har tatt en titt på hvilke du bør følge, og hvilke du kan bryte.",
+        "title": "Bør du følge smokingreglene?",
+      }
+    }
+    key="986521"
+  />,
+  <ArticlePreview
+    article={
+      Object {
+        "category": "fashion",
+        "date": "5. februar 2019",
+        "dateSortable": 20190205,
+        "id": 157489,
+        "image": "https://placeimg.com/300/180/arch",
+        "preamble": "Kong Harald (81) får moteskryt for spenstig skovalg.",
+        "title": "Kongen stilte i Moon Boots: – Helt konge!",
+      }
+    }
+    key="157489"
+  />,
+]
+`;
